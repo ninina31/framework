@@ -61,3 +61,4 @@ Listo!
 * `http://framework.dev/Home/getItem/{:id}?extra={:extra}`: obtiene un item de la base de datos con a través de su id. Adicionalmente, puedes pasar una variable por la URL llamada extra con algún valor y ésta se renderizará en la página web.
 * `http://framework.dev/Home/updateItem/{:oldName}/{:newName}`: actualiza los nombres de los items (oldName) por uno nuevo (newName) de la base de datos. Actualiza todos los que hagan match.
 * `http://framework.dev/Home/deleteItem/{:name}`: elimina los items de la base de datos con el nombre name. Elimina todos los elementos que hagan match.
+* Si alguna página no se encuentra, el framework dará una página de error personalizada.
