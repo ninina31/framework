@@ -82,4 +82,26 @@
 
       return new Response($template->render('Home/home.html.twig', $vars_template));
     }
+    public function getSmartyItem(Request $request, $id = '')
+    {
+      $container = new Container();
+      $template = $container->get('smarty');
+
+      $database = $container->get('database');
+
+      $item = $database->getItem($id);
+      $info = 'No se encontro item';
+
+      if (!empty($item)) {
+        $info = $item;
+      }
+
+      $vars_template = array('name' => $info);
+      
+      if (!empty($request->get->getValue('extra'))) {
+        $vars_template['extra'] = $request->get->getValue('extra');
+      }
+
+      return new Response($template->render(dirname(__FILE__) . '/../../Views/Home/test.tpl', $vars_template));
+    }
   }

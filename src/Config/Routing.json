@@ -24,6 +24,11 @@
     "controller": "JsonHome",
     "action": "getJsonItem"
   },
+  "Home_GetSmartyItem": {
+    "route": "\\Controller\\Home\\Home",
+    "controller": "Home",
+    "action": "getSmartyItem"
+  },
   "Exceptions_notFound": {
     "route": "\\Controller\\Exceptions\\Exceptions",
     "controller": "Exceptions",
