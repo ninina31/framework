@@ -66,8 +66,10 @@ Listo!
 ## Pruebas a realizar
 
 * `http://framework.dev/Home/addItem/:{item}`:agregar un item a la base de datos. `item` es el nombre del item a agregar. Se pueden agregar elementos vacíos.
-* `http://framework.dev/Home/getItem/{:id}?extra={:extra}`: obtiene un item de la base de datos con a través de su id. Adicionalmente, puedes pasar una variable por la URL llamada extra con algún valor y ésta se renderizará en la página web.
+* `http://framework.dev/Home/getItem/{:id}?extra={:extra}`: obtiene un item de la base de datos a través de su id. Adicionalmente, puedes pasar una variable por la URL llamada extra con algún valor y ésta se renderizará en la página web.
 * `http://framework.dev/Home/updateItem/{:oldName}/{:newName}`: actualiza los nombres de los items (oldName) por uno nuevo (newName) de la base de datos. Actualiza todos los que hagan match.
 * `http://framework.dev/Home/deleteItem/{:name}`: elimina los items de la base de datos con el nombre name. Elimina todos los elementos que hagan match.
-* `http://framework.dev/JsonHome/getJsonItem/{:id}`: obtiene un item de la base de datos con a través de su id y lo devuelve en formato Json. Si no encuentra el item, devuelve false.
+* `http://framework.dev/JsonHome/getJsonItem/{:id}`: obtiene un item de la base de datos con su id y lo devuelve en formato Json. Si no encuentra el item, devuelve false.
+* `http://framework.dev/Home/getSmartyItem/{:id}`: obtiene un item de la base de datos con su id y lo devuelve renderizando con Smarty.
+* Todas las vistas se renderizan con Twig menos la última que indica que se renderiza con Smarty.
 * Si alguna página no se encuentra, el framework dará una página de error personalizada.

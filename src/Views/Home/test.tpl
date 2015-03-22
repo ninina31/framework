@@ -4,6 +4,6 @@
   </head>
   <body>
     Test Item:
-    Name: {$name}
+    <p>Name: {$name}</p>
   </body>
 </html>
