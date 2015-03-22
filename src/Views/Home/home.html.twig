@@ -1,0 +1,13 @@
+{% extends "index.html.twig" %}
+
+{% block body %}
+
+  {% if extra != null %}
+
+    <p>Hola, la url es {{ extra }}</p>
+
+  {% endif %}
+
+  <p>{{ msg }} {{ info }}</p>
+
+{% endblock %}

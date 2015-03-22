@@ -1,0 +1,32 @@
+{
+  "Home_AddItem": {
+    "route": "\\Controller\\Home\\Home",
+    "controller": "Home",
+    "action": "addItem"
+  },
+  "Home_GetItem": {
+    "route": "\\Controller\\Home\\Home",
+    "controller": "Home",
+    "action": "getItem"
+  },
+  "Home_UpdateItem": {
+    "route": "\\Controller\\Home\\Home",
+    "controller": "Home",
+    "action": "updateItem"
+  },
+  "Home_DeleteItem": {
+    "route": "\\Controller\\Home\\Home",
+    "controller": "Home",
+    "action": "deleteItem"
+  },
+  "JsonHome_getItem": {
+    "route": "\\Controller\\Home\\JsonHome",
+    "controller": "JsonHome",
+    "action": "getJsonItem"
+  },
+  "Exceptions_notFound": {
+    "route": "\\Controller\\Exceptions\\Exceptions",
+    "controller": "Exceptions",
+    "action": "notFound"
+  }
+}
