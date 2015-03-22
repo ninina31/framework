@@ -13,6 +13,10 @@
   ServerAdmin webmaster@localhost
   DocumentRoot /path/a/proyecto/public/app_dev.php
 
+  <Directory />
+    Require all granted
+  </Directory>
+
   ErrorLog ${APACHE_LOG_DIR}/error.log
   CustomLog ${APACHE_LOG_DIR}/access.log combined
   RewriteEngine On
@@ -30,6 +34,10 @@
   ServerAdmin webmaster@localhost
   DocumentRoot /path/a/proyecto/public/app.php
 
+  <Directory />
+    Require all granted
+  </Directory>
+
   ErrorLog ${APACHE_LOG_DIR}/error.log
   CustomLog ${APACHE_LOG_DIR}/access.log combined
   RewriteEngine On
@@ -38,11 +46,11 @@
    RewriteRule ^/(.+) /index.php [QSA,L]
 </VirtualHost>
 ```
-
-3. Reiniciar Apache
-4. Agregar en /etc/hosts (o archivo host de su sistema operativo) los dominios `framework.dev` y `framework.prod` para 127.0.0.1.
-5. Ejecutar `composer update` en la carpeta del proyecto.
-6. Crear base de datos `framework`, crear usuario llamado `framework` en base de datos MySQL con password vacío y darle permisos para la base de datos creada.
+3. Habilitar página para Apache (`a2ensite framework.dev.conf y a2ensite framework.prod.conf`)
+4. Reiniciar Apache
+5. Agregar en /etc/hosts (o archivo host de su sistema operativo) los dominios `framework.dev` y `framework.prod` para 127.0.0.1.
+6. Ejecutar `composer update` en la carpeta del proyecto.
+7. Crear base de datos `framework`, crear usuario llamado `framework` en base de datos MySQL con password vacío y darle permisos para la base de datos creada.
 
   **Comandos:**
 ```
@@ -51,7 +59,7 @@ create user 'framework'@'localhost';
 grant all on framework.* to 'framework'@'localhost';
 
 ```
-7. Ejecutar el script `dump.sql` encontrado en el proyecto en la base de datos `framework`.
+8. Ejecutar el script `dump.sql` encontrado en el proyecto en la base de datos `framework`.
 
 Listo!
 
