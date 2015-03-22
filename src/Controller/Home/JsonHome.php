@@ -4,7 +4,7 @@
   use Mpwar\Controller\BaseController;
   use Mpwar\Component\Request\Request;
   use Mpwar\Component\Response\JsonResponse;
-  use Mpwar\Component\Database\Sql;
+  use Component\Container;
 
   class JsonHome extends BaseController
   {
@@ -17,9 +17,12 @@
     public function getJsonItem(Request $request, $name = '')
     {
 
-      $database = new Sql('localhost', 'framework', 'root', 'ninina31');
+      $container = new Container();
+      $template = $container->get('twig');
 
-      $json_result = array('msg' => $database->getItem($name));
+      $database = $container->get('database');
+
+      $json_result = array('item' => $database->getItem($name));
 
       return new JsonResponse($json_result);
     }
